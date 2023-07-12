@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>UCO BANK | Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='/assets/img/Logo2.png')}}" rel="icon">
+  <link rel="shorcut icon" href="{{url_for('static', filename='/assets/img/Logo2.png')}}">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+ 
+  
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='/assets/css/style1.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='/assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='/assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+
+
+
+
+
+
+
+
+ 
+</head>
+
+<body>
+
+
+  {% include 'home/header.html' %}
+
+
+  <!-- ======= Header ======= -->
+<!-- End Sidebar-->
+
+<main id="main" class="main">
+  <div class="row mt-2">
+    <div class="col-md-6">
+      <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="title" style="text-align: end;">
+        <p><b>Regd. 203, Hari Om Commercial Complex</b> <br> New Dak Bunglow Road, Patna-800001 </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+
+          <!-- Sales Card -->
+          <div class="col-xxl-3 col-md-6 text-center">
+            <div class="card info-card sales-card">
+
+
+              <div class="card-body text-center">
+                <h5 class="card-title">LOANS </h5>
+
+                <div class="d-flex align-items-center ">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
+                    <i class="bi bi-bank icon"></i>
+                  </div>
+
+                </div>
+                <div class="mt-1">
+                  <h5> <strong> {{ loanBalance }} </strong></h5>
+
+                </div>
+              </div>
+
+            </div>
+          </div><!-- End Sales Card -->
+
+          <!-- Revenue Card -->
+          <div class="col-xxl-3 col-md-6">
+            <div class="card info-card revenue-card">
+
+
+
+              <div class="card-body text-center">
+                <h5 class="card-title">THRIFT FUND</h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
+                    <i class="bi bi-currency-dollar"></i>
+                  </div>
+
+                </div>
+
+
+                <div class="mt-1">
+                  <h5> <strong> {{ thriftBalance }} </strong></h5>
+
+                </div>
+              </div>
+
+            </div>
+          </div><!-- End Revenue Card -->
+
+          <!-- Customers Card -->
+          <div class="col-xxl-3 col-xl-12 text-center">
+
+            <div class="card info-card customers-card">
+
+
+
+              <div class="card-body">
+                <h5 class="card-title">MEMBERS</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
+                    <i class="bi bi-people"></i>
+                  </div>
+
+                </div>
+                <div class="mt-1">
+                  <h5> <strong> {{ activeMembers + inactiveMembers }} </strong></h5>
+                  </h5>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-xxl-3 col-xl-12">
+
+            <div class="card info-card share-card">
+
+
+
+              <div class="card-body text-center">
+                <h5 class="card-title">SHARES</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center mx-auto ">
+                    <i class="bi bi-bar-chart-line icon"></i>
+                  </div>
+
+                </div>
+                <div class="mt-1">
+                  <h5> <strong> {{ shareBalance }} </strong></h5>
+                  </h5>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div><!-- End Customers Card -->
+
+          <!-- Reports -->
+          <div class="col-12">
+            <div class="card">
+
+
+
+              <div class="card-body">
+                <h5 class="card-title">Reports</h5>
+
+                <!-- Line Chart -->
+                <div id="reportsChart"></div>
+
+                <script>
+                  document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#reportsChart"), {
+                      series: [{
+                        data: ["{{loanBalance}}","{{thriftBalance}}","{{activeMembers}}" + "{{inactiveMembers}}","{{shareBalance}}"]
+                      }],
+                      chart: {
+                        type: 'bar',
+                        height: 350
+                      },
+                      plotOptions: {
+                        bar: {
+                          borderRadius: 4,
+                        }
+                      },
+                      dataLabels: {
+                        enabled: false
+                      },
+                      xaxis: {
+                        categories: ['Loan', 'Thrift Fund', 'Members', 'Shares'
+                        ],
+                      }
+                    }).render();
+                  });
+                </script>
+                <!-- End Line Chart -->
+
+              </div>
+
+            </div>
+          </div><!-- End Reports -->
+
+          <!-- Recent Sales -->
+          <!-- End Recent Sales -->
+
+          <!-- Top Selling -->
+          <!-- End Top Selling -->
+
+        </div>
+      </div><!-- End Left side columns -->
+
+      <!-- Right side columns -->
+      <div class="col-lg-4">
+
+        <!-- Recent Activity -->
+        <!-- End Recent Activity -->
+
+        <!-- Website Traffic -->
+        <div class="card">
+
+
+          <div class="card-body pb-0">
+            <h5 class="card-title">Members</span></h5>
+
+            <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+            <script>
+
+              document.addEventListener("DOMContentLoaded", () => {
+                var activemem = "{{activeMembers}}";
+                var inactivemem = "{{inactiveMembers}}";
+                echarts.init(document.querySelector("#trafficChart")).setOption({
+                  tooltip: {
+                    trigger: 'item'
+                  },
+                  legend: {
+                    top: '5%',
+                    left: 'center'
+                  },
+                  series: [{
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                      show: false,
+                      position: 'center'
+                    },
+                    emphasis: {
+                      label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                      }
+                    },
+                    labelLine: {
+                      show: false
+                    },
+                    data: [{
+                      value: activemem,
+                      name: 'Active Members'
+                    },
+                    {
+                      value: inactivemem,
+                      name: 'Inactive Members'
+                    },
+                    ]
+                  }]
+                });
+              });
+            </script>
+
+          </div>
+        </div><!-- End Website Traffic -->
+
+        <!-- News & Updates Traffic -->
+        <!-- End News & Updates -->
+
+      </div><!-- End Right side columns -->
+
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='/assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
+  <script src="{{url_for('static', filename='/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='/assets/vendor/chart.js/chart.umd.js')}}"></script>
+  <script src="{{url_for('static', filename='/assets/vendor/echarts/echarts.min.js')}}"></script>
+  <script src="{{url_for('static', filename='/assets/vendor/quill/quill.min.js')}}"></script>
+  <script src="{{url_for('static', filename='/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
+  <script src="{{url_for('static', filename='/assets/vendor/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{url_for('static', filename='/assets/vendor/php-email-form/validate.js')}}"></script>
+  
+  <script src="{{url_for('static', filename='/assets/js/main.js')}}"></script>
+
+  
+
+  <!-- Template Main JS File -->
+
+</body>
+
+</html>

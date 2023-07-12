@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shorcut icon" href="{{url_for('static', filename='/assets/img/Logo2.png')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link href="{{url_for('static', filename='/assets/css/style1.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+
+    <title>UCO BANK | Share Purchase Module</title>
+</head>
+
+<body>
+  {% include 'home/header.html' %}
+
+    <!-- section -->
+    <main id="main" class="main">
+      <div class="row">
+        <div class="col-md-8">
+
+          <div class="pagetitle">
+          <h1>Share Purchase</h1>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index">Home</a></li>
+              <li class="breadcrumb-item active">Share Purchase</li>
+            </ol>
+          </nav>
+        </div>
+        </div>
+        <div class="col-md-4"><div class="title" style="text-align: end;">
+          <p><b>Regd. 203, Hari Om Commercial Complex</b> <br> New Dak Bunglow Road, Patna-800001   </p>
+        </div></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <form role="form" method="post">
+              <div class="row">
+
+               
+                  <div class="col-md-4">
+                    {% if hid %}
+                      <label for="" class="form-label">Current Balance</label>
+                      <input type="tel" class="form-control" name="phone" id="principle" placeholder="{{ currmember.Thrift_FundBalance }}"
+                          maxlength="10" disabled>
+
+                          {% endif %}
+                  </div>
+                 
+                  <div class="col-md-4"></div>
+                  <div class="col-md-4 ">
+                      <form role="form" method="post" class="ml-auto">
+                          {{ search.hidden_tag() }}
+                          <label for="#" class="text-u">Member Code:</label>
+                          {{ search.text(class="form-control") }}
+                          <button type="submit" class="btn btn-primary bt1 form-label mt-2">Search</button>
+                          </form>
+                  </div>
+                  
+              </div>
+          </form>
+          </div>
+
+ 
+
+  </div>
+          
+      {% if hid %}
+      <section class="section profile">
+  
+      <div class="row">
+              <div class="col-xl-4">
+                  <div class="card">
+                  <h5 class="card-title" style="margin-left: 10px;">Profile</h5>
+                  <hr>
+                  <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                      <input type="text" class="form-control" name="phone" id="phone"
+                          placeholder="{{ currmember.firstname}} {{currmember.lastname}}" maxlength="10" disabled>
+  
+                          <img src="/static/assets/img/{{ currmember.image1}}" class="image-fluid mt-3">
+                          <img src="/static/assets/img/{{ currmember.image2}}" class="image-fluid mt-3">
+  
+                          <input type="tel" class="form-control mt-2" name="phone" id="phone" placeholder="{{ currmember.phoneno}}"
+                          maxlength="10" disabled>
+  
+                          <input type="email" class="form-control mt-2" name="phone" id="phone" placeholder="{{ currmember.email}}"
+                          maxlength="10" disabled>
+  
+  
+                  
+                 
+                  
+                 
+                  
+                  </div>
+              </div>
+           </div>
+  
+  
+           <div class="col-xl-8">
+  
+              <div class="card">
+                <div class="card-body pt-3">
+                  <!-- Bordered Tabs -->
+                  <ul class="nav nav-tabs nav-tabs-bordered">
+    
+                    <li class="nav-item">
+                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Official Details</button>
+                    </li>
+    
+                    <li class="nav-item">
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Credit Shares</button>
+                    </li>
+    
+                    <li class="nav-item">
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Debit Shares</button>
+                    </li>
+                    <li class="nav-item">
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Total">Total Transaction Details</button>
+                    </li>
+    
+                   
+                  </ul>
+                  <div class="tab-content pt-2">
+    
+                    <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                      <h5 class="card-title">Official Details</h5>
+                      <form role="form" method="post">
+                        {{ form1.hidden_tag() }}
+
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Office Name</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control"> -->
+                            {{ form.Office_Name(class="form-control") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Date of Join</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            {{ form.DateofJoin(class="form-control") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Date of Allotment</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            {{ form.DateofAllotment(class="form-control") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Date of Retirement</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            {{ form.DateofRetirement(class="form-control") }}
+
+                          </div>
+                        </div>
+                        
+                        <h5>Share Information</h5>
+                        <hr>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Per Share Amount</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            <input type="number" class="form-control" name="phone"
+                            placeholder="{{ PerShareAmount }}" disabled>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Investment Amount</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            {{ form.investAmount(class="form-control", id="amount", oninput="add_number()") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Share Unit</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            <input type="number" class="form-control" name="phone" id = "txtresult"
+                            placeholder="" disabled>
+                          </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-block text-center mt-3">
+                            <button type=" submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+    
+    
+    
+    
+                    </div>
+    
+                    <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                      <h5 class="card-title">Credit Shares</h5>
+
+                      <!-- Profile Edit Form -->
+                      <form role="form" method="post">
+                        {{ form1.hidden_tag() }}
+
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Per Share Amount</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control"> -->
+                            <input type="number" class="form-control" name="phone"
+                                        placeholder="{{ PerShareAmount }}" disabled>
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Investment Amount</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            {{ form1.investAmount2(class="form-control", id="amount2", oninput="add_number2()") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Share Unit</label>
+                          <div class="col-md-8 col-lg-9">
+                            <!-- <input name="fullName" type="text" class="form-control" > -->
+                            <input type="number" class="form-control" name="phone" id="txtresult2"
+                            placeholder="" disabled>
+
+                          </div>
+                        </div>
+                       
+                      
+                       
+                        
+                        
+                        <div class="d-grid gap-2 d-md-block text-center mt-3">
+                            <button type=" submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form><!-- End Profile Edit Form -->
+    
+                    </div>
+    
+                    <div class="tab-pane fade pt-3" id="profile-settings">
+                      <h5 class="card-title">Debit Shares</h5>
+    
+                      <!-- Settings Form -->
+                      <form role="form" method="post">
+                        {{ form1.hidden_tag() }}
+
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Amount</label>
+                          <div class="col-md-8 col-lg-9">
+                            {{ form2.amount(class="form-control",  id="amount3", oninput="add_number3()") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Remaining Shares</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input type="number" class="form-control" name="phone" id="remShares"
+                                        placeholder="" disabled>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Remaining Count</label>
+                          <div class="col-md-8 col-lg-9">
+                            <input type="number" class="form-control" name="phone" id="remBalance"
+                            placeholder="" disabled>
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Payment Mode</label>
+                          <div class="col-md-8 col-lg-9">
+                            {{ form2.mode_of_transaction(class="form-control") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Cheque Number</label>
+                          <div class="col-md-8 col-lg-9">
+                            {{ form2.cheque_number(class="form-control") }}
+
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="" class="col-md-4 col-lg-3 col-form-label">Transaction Id</label>
+                          <div class="col-md-8 col-lg-9">
+                            {{ form2.transcation_id2(class="form-control") }}
+
+                          </div>
+                        </div>
+                       
+                      
+                       
+                        
+                        
+                        <div class="d-grid gap-2 d-md-block text-center mt-3">
+                            <button type=" submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form><!-- End settings Form -->
+    
+                    </div>
+    
+                    <div class="tab-pane fade pt-3" id="Total">
+                      <h5 class="card-title">Total Transaction Details</h5>
+    
+                      <!-- Settings Form -->
+                      <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Credit/Debit</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in transactions %}
+                            {% if  item.CreditShareAmount != None  %}
+
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ item.CreditShareAmount }}</td>
+                                <td>Credit</td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ item.DebitShareAmount }}</td>
+                                <td>Debit</td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table><!-- End settings Form -->
+    
+                    </div>
+    
+                  </div><!-- End Bordered Tabs -->
+    
+                </div>
+              </div>
+    
+            </div>
+  
+  
+      </div>
+  
+         
+         
+      </section>
+      {% else %}
+      <section class="section profile">
+          <div class="row">
+          <div class="col-xl-4">
+              <div class="card">
+  
+                  <h5 class="card-title" style="margin-left: 10px;">Profile</h5>
+                  <hr>
+                  <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+  
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Name" maxlength="10"  disabled>
+                  <img src="{{url_for('static', filename='/assets/img/ava.png')}}" class="rounded-circle mt-3">
+                  <img src="{{url_for('static', filename='/assets/img/sign.jfif')}}" class="image-fluid mt-3">
+                  <input type="tel" class="form-control mt-2" name="phone" id="phone" placeholder="Phone" maxlength="10" disabled>
+  
+                  <input type="email" class="form-control mt-2" name="phone" id="phone" placeholder="Email" maxlength="10" disabled>
+  
+             
+              
+             
+             
+              </div>
+              </div>
+          </div>
+      </div>
+          <!-- right panel -->
+      </section>
+  
+      {% endif %}
+    
+        <!-- JavaSccript-->
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    </main>
+    <!-- JavaSccript-->
+    <script>
+
+        var text1 = document.getElementById("amount");
+        var text2 = document.getElementById("amount2");
+        var PerShareAmount = 10;
+
+        function add_number() {
+        
+        var first_number = parseFloat(text1.value);
+        if (isNaN(first_number)) first_number = 0;
+        var result = first_number/PerShareAmount ;
+        document.getElementById("txtresult").placeholder = result;
+        }
+
+        function add_number2() {
+        
+        var first_number = parseFloat(text2.value);
+        if (isNaN(first_number)) first_number = 0;
+        var result = first_number/PerShareAmount ;
+        document.getElementById("txtresult2").placeholder = result;
+        }
+
+        function add_number3() {
+
+        console.log("print")
+        var prevBal = document.getElementById("prevBal");
+        var prevBalF = parseFloat(prevBal.placeholder);
+        console.log("print2")
+        var amountid = document.getElementById("amount3");
+        var amount = parseFloat(amountid.value);
+
+        var remBal = prevBalF-amount;
+        var remShares = remBal/PerShareAmount;
+        
+        if (isNaN(amount)) amount = 0;
+       
+        document.getElementById("remBalance").placeholder = remBal;
+        document.getElementById("remShares").placeholder = remShares;
+        }
+    </script>
+        <script src="{{url_for('static', filename='/assets/js/main.js')}}"></script>
+
+   <script src="{{url_for('static', filename='/assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
+   <script src="{{url_for('static', filename='/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+   <script src="{{url_for('static', filename='/assets/vendor/chart.js/chart.umd.js')}}"></script>
+   <script src="{{url_for('static', filename='/assets/vendor/echarts/echarts.min.js')}}"></script>
+   <script src="{{url_for('static', filename='/assets/vendor/quill/quill.min.js')}}"></script>
+   <script src="{{url_for('static', filename='/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
+   <script src="{{url_for('static', filename='/assets/vendor/tinymce/tinymce.min.js')}}"></script>
+   <script src="{{url_for('static', filename='/assets/vendor/php-email-form/validate.js')}}"></script>
+</body>
+
+</html>

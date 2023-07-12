@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shorcut icon" href="{{url_for('static', filename='/assets/img/Logo2.png')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link href="{{url_for('static', filename='/assets/css/style1.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='/assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+
+    <title>UCO BANK | Admin Updates</title>
+</head>
+
+<body>
+  {% include 'home/header.html' %}
+
+      <main id="main" class="main">
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="pagetitle">
+                <h1>Admin Updates</h1>
+                <nav>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index">Home</a></li>
+                    <li class="breadcrumb-item active">Admin Updates</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+              <div class="col-md-4">
+                <div class="title" style="text-align: end;">
+                  <p><b>Regd. 203, Hari Om Commercial Complex</b> <br> New Dak Bunglow Road, Patna-800001   </p>
+                </div>
+                </div>
+    
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+              <a href="member_approval_list" style="text-decoration: none; color: black; ">
+      
+              <div class="card text-center  mx-auto">
+                <img src="{{url_for('static', filename='/assets/img/team.png')}}" class="mx-auto mt-2"  alt="..." height="100px" width="100px">
+                <div class="card-body">
+                  <h5 class="card-title">Tickets for Member approval</h5>
+                  <!-- <p class="card-text">This Report provides you information about members.</p> -->
+                </div>
+              </div>
+            </a>
+      
+            <a href="Thrift_approval" style="text-decoration: none; color: black;">      
+
+              <div class="card text-center mx-auto">
+                <img src="{{url_for('static', filename='/assets/img/save-money.png')}}" class="mx-auto mt-2"  alt="..." height="100px" width="100px">
+                <div class="card-body">
+                  <h5 class="card-title">Ticket for Thrift Approval</h5>
+                </div>
+              </div>
+            
+      </a>
+            <!-- <a href="Thrift_Fund_report" style="text-decoration: none; color: black;">      
+      
+              <div class="card text-center mx-auto">
+                <img src="{{url_for('static', filename='/assets/img/save-money.png')}}" class="mx-auto mt-2"  alt="..." height="100px" width="100px">
+                <div class="card-body">
+                  <h5 class="card-title">Thrift Fund Report</h5>
+                  <p class="card-text">This Report provides you information about Thrift Fund.</p>
+                </div>
+              </div>
+            
+      </a> -->
+            
+      
+                  </div>  
+      
+              <div class="col-lg-4">
+                <a href="loan_approval_list" style="text-decoration: none; color: black;">
+                  <div class="card text-center  mx-auto midd">
+                    <img src="{{url_for('static', filename='/assets/img/loan.png')}}" class="mx-auto mt-2"  alt="..." height="100px" width="100px">
+                    <div class="card-body">
+                      <h5 class="card-title">Tickets For Loan Approval</h5>
+                    </div>
+                  </div>
+                </a>
+              
+      
+                    </div>
+      
+      
+                   
+      
+      
+                <div class="col-lg-4">
+        
+      
+                <a href="share_approval_list" style="text-decoration: none; color: black;">
+      
+                  <div class="card text-center  mx-auto">
+                    <img src="{{url_for('static', filename='/assets/img/market-share.png')}}" class="mx-auto mt-2"  alt="..." height="100px" width="100px">
+                    <div class="card-body">
+                      <h5 class="card-title">Tickets for Share Approval</h5>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="Global_update" style="text-decoration: none; color: black;">      
+
+                  <div class="card text-center mx-auto">
+                    <img src="{{url_for('static', filename='/assets/img/world.png')}}" class="mx-auto mt-2"  alt="..." height="100px" width="100px">
+                    <div class="card-body">
+                      <h5 class="card-title">Global Updates</h5>
+                    </div>
+                  </div>
+                
+          </a>
+        
+                      </div>
+      
+      
+                    
+        
+                </div>
+      
+        
+      </main>
+      <script src="{{url_for('static', filename='/assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
+    <script src="{{url_for('static', filename='/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='/assets/vendor/chart.js/chart.umd.js')}}"></script>
+    <script src="{{url_for('static', filename='/assets/vendor/echarts/echarts.min.js')}}"></script>
+    <script src="{{url_for('static', filename='/assets/vendor/quill/quill.min.js')}}"></script>
+    <script src="{{url_for('static', filename='/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
+    <script src="{{url_for('static', filename='/assets/vendor/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{url_for('static', filename='/assets/vendor/php-email-form/validate.js')}}"></script>
+    
+    <script src="{{url_for('static', filename='/assets/js/main.js')}}"></script>
+    <footer></footer>
+</body>
+
+</html>

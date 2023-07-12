@@ -1,0 +1,197 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Blog Author {% endblock %} 
+
+{% block body_class %} blog-author {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+  <header>
+    <div class="page-header min-height-400" style="background-image: url('https://www.expo2020dubai.com/-/media/expo2020/dining/habib-beirut/habib-beirut-hero-1920x1080.jpg');" loading="lazy">
+      <span class="mask bg-gradient-dark opacity-8"></span>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </header>
+
+  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
+    <!-- START Testimonials w/ user image & text & info -->
+    <section class="py-sm-7 py-5 position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mx-auto">
+            <div class="mt-n8 mt-md-n9 text-center">
+              <img class="shadow-xl position-relative z-index-2 max-height-500" src="static/assets/img/dishes/dish2.jpg" alt="bruce" loading="lazy">
+            </div>
+            <div class="row py-5">
+              <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3 class="mb-0">Sandwich</h3>
+                 
+                </div>
+                <br>
+                <p class="text-lg mb-0">
+                  <strong>Here goes the description about the recipe</strong>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </a>
+                </p>
+                <br>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>sandwich bread 8 nos</li>
+                    <li>grated carrot 1/2 cups</li>
+                    <li>finely chopped english cucumber 1/3 cups</li>
+                    <li>finely chopped tomatoes 1/3 cups</li>
+                    <li>shredded cabbage 1/2 cups</li>
+                    <li>butter 3-4 tbsp</li>
+                    <li>mayonnaise 2-3 tbsp</li>
+                    <li>sandwich spread 2-3 tbsp</li>
+                    <li>black pepper 1/2 tsp</li>
+                    <li>salt 1/2 tsp</li>
+                </ul>
+
+
+                <h3>Steps to prepare</h3>
+                <ol>
+                    <li>Take bread slices and cut the edges and keep aside.</li>
+                    <br>
+                    <li>In a mixing bowl add grated carrot, shredded cabbage, finely chopped cucumber, tomato</li>
+                    <br>
+                    <li>Next add butter, mayonnaise and sandwich spread (any flavour of your choice</li>
+                    <br>
+                    <li>Next add some salt, pepper and give it a good mix</li>
+                    <br>
+                    <li>Take a bread slice, evenly spread the prepared mixture and cover with another bread slice</li>
+                    <br>
+                    <li>Prepare rest of the sandwich like this.</li>
+                    <br>
+                    <li>Serve with your favourite fruits or juice</li>
+                </ol>
+
+                <div class="">
+                  <strong>Rating  :</strong>
+
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Recipes uploaded by the user -->
+    <section class="py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="mb-5">Similar Recipes</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="card card-plain">
+              <div class="card-header p-0 position-relative">
+                <a class="d-block blur-shadow-image">
+                  <img src="static/assets/img/dishes/dish1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                </a>
+              </div>
+              <div class="card-body px-0">
+                <h5>
+                  <a href="javascript:;" class="text-dark font-weight-bold">Dish Name</a>
+                </h5>
+                <p>
+                  Dish Description
+                </p>
+                <a href="javascript:;" class="text-info text-sm icon-move-right">Read More
+                  <i class="fas fa-arrow-right text-xs ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-sm-6">
+            <div class="card card-plain">
+              <div class="card-header p-0 position-relative">
+                <a class="d-block blur-shadow-image">
+                  <img src="static/assets/img/dishes/dish1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                </a>
+              </div>
+              <div class="card-body px-0">
+                <h5>
+                  <a href="javascript:;" class="text-dark font-weight-bold">Dish Name</a>
+                </h5>
+                <p>
+                  Dish Description
+                </p>
+                <a href="javascript:;" class="text-info text-sm icon-move-right">Read More
+                  <i class="fas fa-arrow-right text-xs ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-sm-6">
+            <div class="card card-plain">
+              <div class="card-header p-0 position-relative">
+                <a class="d-block blur-shadow-image">
+                  <img src="static/assets/img/dishes/dish1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                </a>
+              </div>
+              <div class="card-body px-0">
+                <h5>
+                  <a href="javascript:;" class="text-dark font-weight-bold">Dish Name</a>
+                </h5>
+                <p>
+                  Dish Description
+                </p>
+                <a href="javascript:;" class="text-info text-sm icon-move-right">Read More
+                  <i class="fas fa-arrow-right text-xs ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-sm-6">
+            <div class="card card-plain">
+              <div class="card-header p-0 position-relative">
+                <a class="d-block blur-shadow-image">
+                  <img src="static/assets/img/dishes/dish1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
+                </a>
+              </div>
+              <div class="card-body px-0">
+                <h5>
+                  <a href="javascript:;" class="text-dark font-weight-bold">Dish Name</a>
+                </h5>
+                <p>
+                  Dish Description
+                </p>
+                <a href="javascript:;" class="text-info text-sm icon-move-right">Read More
+                  <i class="fas fa-arrow-right text-xs ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+        
+      </div>
+    </section>
+    <!-- END Blogs w/ 4 cards w/ image & text & link -->
+  </div>
+  
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
