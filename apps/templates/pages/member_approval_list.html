@@ -69,51 +69,15 @@
                         </tr>
                       </thead>
                       <tbody>
+                        {% for member in members %}
                         <tr>
-                          <th scope="row">1234</th>
-                          <td>Example</td>
-                          <td>+123 456 7890</td>
-                          <td>demo@gmail.com</td>
-                          <td><a class="btn btn-outline-success" href="member_approval">View</a></td>
-                         
-    
+                            <td>{{ member.userid }}</td>
+                            <td>{{ member.firstname  }} {{ member.lastname  }}</td>
+                            <td>{{ member.phoneno  }}</td>
+                            <td>{{ member.email  }}</td>
+                            <td><a class="btn btn-outline-success" href="/member_approval/{{ member.userid }}">View</a></td>
                         </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
-                          <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
-                          <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
-                          <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
+                        {% endfor %}
                       </tbody>
                     </table>
                     <!-- End Default Table Example -->

@@ -51,7 +51,7 @@
 
 
 <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
 
           <div class="card">
             <div class="card-body">
@@ -60,49 +60,38 @@
               <!-- Horizontal Form -->
               <form style="margin-top: -20px;">
                 <div class="row" style="margin-bottom: -20px;">
-                  <label for="#" class="col-sm-6 col-form-label">Office Name:</label>
+                  <label for="#" class="col-sm-6 col-form-label">Office Name: {{ share.ShareOfficeName }} </label>
                   <div class="col-sm-6">
                     <input type="text" class="border-0 bg-transparent" disabled>
                   </div>
                 </div>
                 <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Date of Join:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Date of Join: {{ share.ShareDateofJoinig }} </label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Date of Allotment:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Date of Allotment: {{ share.ShareDateofAllotment }} </label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Date of Retirement:</label>
+                      <label for="#" class="col-sm-6 col-form-label">Date of Retirement: {{ share.ShareDateofRetirement }} </label>
                       <div class="col-sm-6">
                         <input type="text" class="border-0 bg-transparent" disabled>
                       </div>
                     </div>
                
-                    <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">Per Share Amount:</label>
-                        <div class="col-sm-6">
-                          <input type="text" class="border-0 bg-transparent" disabled>
-                        </div>
-                      </div>
+                    
                       <div class="row" style="margin-bottom: -20px;">
-                          <label for="#" class="col-sm-6 col-form-label">Investment Amount:</label>
+                          <label for="#" class="col-sm-6 col-form-label">Investment Amount: {{ share.ShareTotalAmount }} </label>
                           <div class="col-sm-6">
                             <input type="text" class="border-0 bg-transparent" disabled>
                           </div>
                         </div>
-                        <div class="row" style="margin-bottom: -20px;">
-                          <label for="#" class="col-sm-6 col-form-label">Share Unit
-                            :</label>
-                          <div class="col-sm-6">
-                            <input type="text" class="border-0 bg-transparent" disabled>
-                          </div>
-                        </div>
+                      
                        
                      
                            
@@ -118,53 +107,12 @@
 
         </div>
 
-        <div class="col-lg-6">
-
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Credit Shares</h5>
-  
-               
-                <form style="margin-top: -20px;">
-                    <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Per Share Amount:</label>
-                      <div class="col-sm-6">
-                        <input type="text" class="border-0 bg-transparent" disabled>
-                      </div>
-                    </div>
-                    <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">Investment Amount:</label>
-                        <div class="col-sm-6">
-                          <input type="text" class="border-0 bg-transparent" disabled>
-                        </div>
-                      </div>
-                      <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">Share Unit:</label>
-                        <div class="col-sm-6">
-                          <input type="text" class="border-0 bg-transparent" disabled>
-                        </div>
-                      </div>
-                   
-                             
-                         
-                   
-                   
-                
-                    
-                  </form><!-- End Horizontal Form -->
-  
-              </div>
-            </div>
-          
-          
-  
-          </div>
+   
 
           
           <div class="d-grid mt-4 gap-2 col d-md-flex justify-content-md-center">
-            <button type="#" class="btn btn-outline-danger">Deny</button>
-            <a class="btn btn-outline-success" href="#">Approve</a>
-            <a class="btn btn-outline-primary" href="#">Edit</a>
+            <a class="btn btn-outline-success" href="/approve_share/{{ share.member_id }}">Approve</a>
+            <a class="btn btn-outline-danger" href="/deny_share/{{ share.member_id }}">Deny</a>
         </div>
 
       </div>

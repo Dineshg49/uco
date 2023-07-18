@@ -784,6 +784,9 @@ def business_report_download():
 @blueprint.route('/MGI2', methods=['GET', 'POST'])
 def MGI2():
     kycform = KYCForm(request.form)
+    personalInfo = PersonalInfo()
+    if 'email' not in session : 
+        return render_template('pages/PI1.html', form=personalInfo)
     currmember = Members.query.filter_by(email=session['email']).first()
 
 
@@ -818,6 +821,9 @@ def MGI2():
 @blueprint.route('/MBI3', methods=['GET', 'POST'])
 def MBI3():
     memberbanking = MemberBankingForm(request.form)
+    personalInfo = PersonalInfo()
+    if 'email' not in session : 
+        return render_template('pages/PI1.html', form=personalInfo)
     currmember = Members.query.filter_by(email=session['email']).first()
 
     if currmember :
@@ -846,6 +852,9 @@ def MBI3():
 @blueprint.route('/NI4', methods=['GET', 'POST'])
 def NI4():
     nomineeForm = NomineeForm(request.form)
+    personalInfo = PersonalInfo()
+    if 'email' not in session : 
+        return render_template('pages/PI1.html', form=personalInfo)
     currmember = Members.query.filter_by(email=session['email']).first()
 
     if currmember :
@@ -870,7 +879,11 @@ def NI4():
 
 @blueprint.route('/Edit', methods=['GET', 'POST'])
 def Edit():
+    personalInfo = PersonalInfo()
+    if 'email' not in session : 
+        return render_template('pages/PI1.html', form=personalInfo)
     currmember = Members.query.filter_by(email=session['email']).first()
+    
     personalInfo = PersonalInfo(request.form)
     memberbanking = MemberBankingForm(request.form)
     nomineeForm = NomineeForm(request.form)
@@ -967,8 +980,11 @@ def Thrift():
             currmember = Members.query.filter_by(userid=query).first()
             session['email']  = currmember.email
         
-        transactions = ThriftFunds.query.filter_by(member_id = currmember.id).with_entities(ThriftFunds.Thrift_Credit_Amount, ThriftFunds.Thrift_Credit_TransactionID, ThriftFunds.Thrift_Debit_Amount,ThriftFunds.Thrift_Debit_TransactionID).all()
-        print(transactions)
+        transactions = []
+        if session['email'] :
+            currmember = Members.query.filter_by(email=session['email']).first()
+            transactions = ThriftFunds.query.filter_by(member_id = currmember.userid).with_entities(ThriftFunds.Thrift_Credit_Amount, ThriftFunds.Thrift_Credit_TransactionID, ThriftFunds.Thrift_Debit_Amount,ThriftFunds.Thrift_Debit_TransactionID).all()
+        
         return render_template('pages/Thrift.html',form=Tform,form1=Tform1,form2=Tform2,form3=Tform3, currmember=currmember,search = SearchForm,hid=True, transactions = transactions)
 
 
@@ -1291,7 +1307,7 @@ def approve_member (id):
 
 @blueprint.route('/deny_share/<id>', methods=['GET', 'POST'])
 def deny_share (id):
-    share = Shares.query.filter_by(member_id=id).first()
+    share = Shares.query.filter_by(member_id=id, ApprovedStatus="Pending").first()
 
     share.ApprovedStatus = "Denied"
     db.session.commit()
@@ -1300,7 +1316,7 @@ def deny_share (id):
 
 @blueprint.route('/approve_share/<id>', methods=['GET', 'POST'])
 def approve_share (id):
-    share = Shares.query.filter_by(member_id=id).first()
+    share = Shares.query.filter_by(member_id=id, ApprovedStatus="Pending").first()
 
     share.ApprovedStatus = "Approved"
     db.session.commit()
@@ -1310,7 +1326,7 @@ def approve_share (id):
 
 @blueprint.route('/deny_loan/<id>', methods=['GET', 'POST'])
 def deny_loan (id):
-    loan = Loan.query.filter_by(member_id=id).first()
+    loan = Loan.query.filter_by(member_id=id, ApprovedStatus="Pending").first()
 
     loan.ApprovedStatus = "Denied"
     db.session.commit()
@@ -1319,7 +1335,7 @@ def deny_loan (id):
 
 @blueprint.route('/approve_loan/<id>', methods=['GET', 'POST'])
 def approve_loan (id):
-    loan = Loan.query.filter_by(member_id=id).first()
+    loan = Loan.query.filter_by(member_id=id, ApprovedStatus="Pending").first()
 
     loan.ApprovedStatus = "Approved"
     db.session.commit()

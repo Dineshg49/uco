@@ -8,7 +8,7 @@ from flask_admin.contrib.sqla import ModelView
 
 from apps.config import config_dict
 from apps import create_app, db
-from apps.utils.models import Users,Members, GlobalValues, Shares, Loan
+from apps.utils.models import Users,Members, GlobalValues, Shares, Loan, ThriftFunds
 
 
 # WARNING: Don't run with debug turned on in production!
@@ -34,6 +34,7 @@ admin.add_view(ModelView(Members, db.session))
 admin.add_view(ModelView(GlobalValues, db.session))
 admin.add_view(ModelView(Shares, db.session))
 admin.add_view(ModelView(Loan   , db.session))
+admin.add_view(ModelView(ThriftFunds   , db.session))
 
 
 

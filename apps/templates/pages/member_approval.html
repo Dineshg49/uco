@@ -60,88 +60,88 @@
               <!-- Horizontal Form -->
               <form style="margin-top: -20px;">
                 <div class="row" style="margin-bottom: -20px;">
-                  <label for="#" class="col-sm-6 col-form-label">Member Name:</label>
+                  <label for="#" class="col-sm-6 col-form-label">Member Name:  {{ member.firstname }} </label>
                   <div class="col-sm-6">
-                    <input type="text" class="border-0 bg-transparent" disabled>
+                    <input type="text" class="border-0 bg-transparent" disabled placeholder="">
                   </div>
                 </div>
                 <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Last Name:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Last Name: {{ member.lastname }} </label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Member D.O.B:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Member D.O.B: {{ member.dob }} </label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Age:</label>
+                      <label for="#" class="col-sm-6 col-form-label">Age: {{ member.age }} </label>
                       <div class="col-sm-6">
                         <input type="text" class="border-0 bg-transparent" disabled>
                       </div>
                     </div>
                
                     <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">Gender:</label>
+                        <label for="#" class="col-sm-6 col-form-label">Gender: {{ member.gender }} </label>
                         <div class="col-sm-6">
                           <input type="text" class="border-0 bg-transparent" disabled>
                         </div>
                       </div>
                       <div class="row" style="margin-bottom: -20px;">
-                          <label for="#" class="col-sm-6 col-form-label">Status:</label>
+                          <label for="#" class="col-sm-6 col-form-label">Status: {{ member.status }} </label>
                           <div class="col-sm-6">
                             <input type="text" class="border-0 bg-transparent" disabled>
                           </div>
                         </div>
                         <div class="row" style="margin-bottom: -20px;">
                           <label for="#" class="col-sm-6 col-form-label">Guardian Name
-                            :</label>
+                            : {{ member.guardian_firstname }} </label>
                           <div class="col-sm-6">
                             <input type="text" class="border-0 bg-transparent" disabled>
                           </div>
                         </div>
                         <div class="row" style="margin-bottom: -20px;">
-                            <label for="#" class="col-sm-6 col-form-label">Guardian Relation:</label>
+                            <label for="#" class="col-sm-6 col-form-label">Guardian Relation: {{ member.guardian_relation }} </label>
                             <div class="col-sm-6">
                               <input type="text" class="border-0 bg-transparent" disabled>
                             </div>
                           </div>
                           <div class="row" style="margin-bottom: -20px;">
-                            <label for="#" class="col-sm-6 col-form-label">Phone:</label>
+                            <label for="#" class="col-sm-6 col-form-label">Phone: {{ member.phoneno }} </label>
                             <div class="col-sm-6">
                               <input type="text" class="border-0 bg-transparent" disabled>
                             </div>
                           </div>
                           <div class="row" style="margin-bottom: -20px;">
                             <label for="#" class="col-sm-6 col-form-label">Email Id
-                                :</label>
+                                : {{ member.email }} </label>
                             <div class="col-sm-6">
                               <input type="text" class="border-0 bg-transparent" disabled>
                             </div>
                           </div>
                           <div class="row" style="margin-bottom: -20px;">
-                              <label for="#" class="col-sm-6 col-form-label">House/Flat No.:</label>
+                              <label for="#" class="col-sm-6 col-form-label">House/Flat No.: {{ member.address_line1 }} </label>
                               <div class="col-sm-6">
                                 <input type="email" class="form-control" hidden>
                               </div>
                             </div>
                           <div class="row" style="margin-bottom: -20px;">
-                              <label for="#" class="col-sm-6 col-form-label">Street no./Area:</label>
+                              <label for="#" class="col-sm-6 col-form-label">Street no./Area: {{ member.address_line2 }} </label>
                               <div class="col-sm-6">
                                 <input type="email" class="form-control" hidden>
                               </div>
                             </div>
                           <div class="row" style="margin-bottom: -20px;">
-                              <label for="#" class="col-sm-6 col-form-label">State:</label>
+                              <label for="#" class="col-sm-6 col-form-label">State: {{ member.state }} </label>
                               <div class="col-sm-6">
                                 <input type="email" class="form-control" hidden>
                               </div>
                             </div>
                           <div class="row" style="margin-bottom: -20px;">
-                              <label for="#" class="col-sm-6 col-form-label">Pincode:</label>
+                              <label for="#" class="col-sm-6 col-form-label">Pincode: {{ member.pincode }} </label>
                               <div class="col-sm-6">
                                 <input type="email" class="form-control" hidden>
                               </div>
@@ -164,38 +164,38 @@
               <!-- Horizontal Form -->
               <form style="margin-top: -20px;">
                 <div class="row" style="margin-bottom: -20px;">
-                  <label for="#" class="col-sm-6 col-form-label">Bank Name:</label>
+                  <label for="#" class="col-sm-6 col-form-label">Bank Name: {{ member.bankname }} </label>
                   <div class="col-sm-6">
                     <input type="text" class="border-0 bg-transparent" disabled>
                   </div>
                 </div>
                 <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Branch Name:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Branch Name: {{ member.branchName }} </label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Account No.:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Account No.: {{ member.accountno }} </label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Category:</label>
+                      <label for="#" class="col-sm-6 col-form-label">Category: {{ member.category }} </label>
                       <div class="col-sm-6">
                         <input type="text" class="border-0 bg-transparent" disabled>
                       </div>
                     </div>
                
                     <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">IFSC Code:</label>
+                        <label for="#" class="col-sm-6 col-form-label">IFSC Code: {{ member.ifsc_code }} </label>
                         <div class="col-sm-6">
                           <input type="text" class="border-0 bg-transparent" disabled>
                         </div>
                       </div>
                       <div class="row" style="margin-bottom: -20px;">
-                          <label for="#" class="col-sm-6 col-form-label">MICR Code:</label>
+                          <label for="#" class="col-sm-6 col-form-label">MICR Code: {{ member.micr_code }} </label>
                           <div class="col-sm-6">
                             <input type="text" class="border-0 bg-transparent" disabled>
                           </div>
@@ -222,63 +222,61 @@
                
                 <form style="margin-top: -20px;">
                     <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">PF No:</label>
+                      <label for="#" class="col-sm-6 col-form-label">PF No: {{ member.pf_no }} </label>
                       <div class="col-sm-6">
                         <input type="text" class="border-0 bg-transparent" disabled>
                       </div>
                     </div>
                     <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">Gender:</label>
+                        <label for="#" class="col-sm-6 col-form-label">Gender: {{ member.gender }} </label>
                         <div class="col-sm-6">
                           <input type="text" class="border-0 bg-transparent" disabled>
                         </div>
                       </div>
                       <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">ID Proof Name:</label>
+                        <label for="#" class="col-sm-6 col-form-label">ID Proof Name: {{ member.id_proof_name }} </label>
                         <div class="col-sm-6">
                           <input type="text" class="border-0 bg-transparent" disabled>
                         </div>
                       </div>
                       <div class="row" style="margin-bottom: -20px;">
-                          <label for="#" class="col-sm-6 col-form-label">ID Proof No:</label>
+                          <label for="#" class="col-sm-6 col-form-label">ID Proof No: {{ member.id_proof_no }} </label>
                           <div class="col-sm-6">
                             <input type="text" class="border-0 bg-transparent" disabled>
                           </div>
                         </div>
                    
                         <div class="row" style="margin-bottom: -20px;">
-                            <label for="#" class="col-sm-6 col-form-label">Address Proof:</label>
+                            <label for="#" class="col-sm-6 col-form-label">Address Proof: {{ member.address_proof_name }} </label>
                             <div class="col-sm-6">
                               <input type="text" class="border-0 bg-transparent" disabled>
                             </div>
                           </div>
                           <div class="row" style="margin-bottom: -20px;">
-                              <label for="#" class="col-sm-6 col-form-label">Address Proof No:</label>
+                              <label for="#" class="col-sm-6 col-form-label">Address Proof No: {{ member.address_proof_no }} </label>
                               <div class="col-sm-6">
                                 <input type="text" class="border-0 bg-transparent" disabled>
                               </div>
                             </div>
                             <div class="row" style="margin-bottom: -20px;">
-                              <label for="#" class="col-sm-6 col-form-label">Sign. Proof Name:</label>
+                              <label for="#" class="col-sm-6 col-form-label">Sign. Proof Name: {{ member.sign_proof_name }} </label>
                               <div class="col-sm-6">
                                 <input type="text" class="border-0 bg-transparent" disabled>
                               </div>
                             </div>
                             <div class="row" style="margin-bottom: -20px;">
-                                <label for="#" class="col-sm-6 col-form-label">PAN Card No:</label>
+                                <label for="#" class="col-sm-6 col-form-label">PAN Card No: {{ member.pan_no }} </label>
                                 <div class="col-sm-6">
                                   <input type="text" class="border-0 bg-transparent" disabled>
                                 </div>
                               </div>
                               <div class="row" style="margin-bottom: -20px;">
-                                <label for="#" class="col-sm-6 col-form-label">Upload Image:</label>
                                 <div class="col-sm-6">
-                                    <img src="{{url_for('static', filename='/assets/img/ava.png')}} " height="100px">                                </div>
+                                    <img src="/static/assets/img/{{ member.image1}}" height="100px">                                </div>
                                                                    </div>
                               <div class="row mt-4 mb-1" style="margin-bottom: -20px;">
-                                <label for="#" class="col-sm-6 col-form-label">Upload Image:</label>
                                 <div class="col-sm-6">
-                                    <img src="{{url_for('static', filename='/assets/img/sign.jfif')}} " height="50px">                                </div>
+                                    <img src="/static/assets/img/{{ member.image2}}" height="50px">                                </div>
                               </div>
                              
                          
@@ -298,32 +296,32 @@
                   <!-- Horizontal Form -->
                   <form style="margin-top: -20px;">
                     <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Nominee Name:</label>
+                      <label for="#" class="col-sm-6 col-form-label">Nominee Name: {{ member.nomi_name }} </label>
                       <div class="col-sm-6">
                         <input type="text" class="border-0 bg-transparent" disabled>
                       </div>
                     </div>
                     <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">D.O.B:</label>
+                        <label for="#" class="col-sm-6 col-form-label">D.O.B: {{ member.nomi_dob }} </label>
                         <div class="col-sm-6">
                           <input type="text" class="border-0 bg-transparent" disabled>
                         </div>
                       </div>
                       <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">Age:</label>
+                        <label for="#" class="col-sm-6 col-form-label">Age: {{ member.nomi_age }} </label>
                         <div class="col-sm-6">
                           <input type="text" class="border-0 bg-transparent" disabled>
                         </div>
                       </div>
                       <div class="row" style="margin-bottom: -20px;">
-                          <label for="#" class="col-sm-6 col-form-label">Relation:</label>
+                          <label for="#" class="col-sm-6 col-form-label">Relation: {{ member.nomi_relation }} </label>
                           <div class="col-sm-6">
                             <input type="text" class="border-0 bg-transparent" disabled>
                           </div>
                         </div>
                    
                         <div class="row" style="margin-bottom: -20px;">
-                            <label for="#" class="col-sm-6 col-form-label">Per. Of Share:</label>
+                            <label for="#" class="col-sm-6 col-form-label">Per. Of Share: {{ member.nomi_per_share }} </label>
                             <div class="col-sm-6">
                               <input type="text" class="border-0 bg-transparent" disabled>
                             </div>
@@ -345,9 +343,9 @@
 
           
           <div class="d-grid mt-4 gap-2 col d-md-flex justify-content-md-center">
-            <button type="#" class="btn btn-outline-danger">Deny</button>
-            <a class="btn btn-outline-success" href="#">Approve</a>
-            <button type="#" class="btn btn-outline-primary">Edit</button>
+            <a class="btn btn-outline-success" href="/approve_member/{{ member.userid }}">Approve</a>
+            <a class="btn btn-outline-danger" href="/deny_member/{{ member.userid }}">Deny</a>
+            
         </div>
 
       </div>

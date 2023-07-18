@@ -61,9 +61,6 @@
                       <thead>
                         <tr>
                           <th scope="col">Member Id</th>
-                          <th scope="col">Member Name</th>
-                          <th scope="col">Contact Number</th>
-                          <th scope="col">Email</th>
                           <th scope="col">Loan Amount(₹)</th>
                           <th scope="col">Action</th>
                           
@@ -71,55 +68,17 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">1234</th>
-                          <td>Example</td>
-                          <td>+123 456 7890</td>
-                          <td>demo@gmail.com</td>
-                          <td>1,00,000</td>
-                          <td><a class="btn btn-outline-success" href="loan_approval">View</a></td>
+                          
                          
     
                         </tr>
+                        {% for loan in loans %}
                         <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
-                          <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
-                          <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
-                          <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           
-      
-                          </tr>
+                            <td>{{ loan.member_id }}</td>
+                            <td>{{ loan.LoanAmount }}</td>
+                            <td><a class="btn btn-outline-success" href="/loan_approval/{{ loan.member_id }}">View</a></td>
+                        </tr>
+                        {% endfor %}
                       </tbody>
                     </table>
                     <!-- End Default Table Example -->

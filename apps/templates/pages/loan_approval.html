@@ -53,7 +53,7 @@
 <div class="row">
         
 
-          <div class="col-md-6">
+          <div class="col-md-12">
 
           <div class="card">
             <div class="card-body">
@@ -62,53 +62,30 @@
               <!-- Horizontal Form -->
               <form style="margin-top: -20px;">
                 <div class="row" style="margin-bottom: -20px;">
-                  <label for="#" class="col-sm-6 col-form-label">Office Name:</label>
+                  <label for="#" class="col-sm-6 col-form-label">Office Name: {{ loan.LoanOfficeName }}</label>
                   <div class="col-sm-6">
                     <input type="text" class="border-0 bg-transparent" disabled>
                   </div>
                 </div>
                 <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Loan Date:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Loan Date: {{ loan.LoanDate }}</label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Loan Type:</label>
+                    <label for="#" class="col-sm-6 col-form-label">Loan Type: {{ loan.LoanType }}</label>
                     <div class="col-sm-6">
                       <input type="text" class="border-0 bg-transparent" disabled>
                     </div>
                   </div>
                   <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Loan Amount:</label>
+                      <label for="#" class="col-sm-6 col-form-label">Loan Amount: {{ loan.LoanAmount }}</label>
                       <div class="col-sm-6">
                         <input type="text" class="border-0 bg-transparent" disabled>
                       </div>
                     </div>
-                  <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Tenure (months):</label>
-                      <div class="col-sm-6">
-                        <input type="text" class="border-0 bg-transparent" disabled>
-                      </div>
-                    </div>
-                  <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">EMI Amount:</label>
-                      <div class="col-sm-6">
-                        <input type="text" class="border-0 bg-transparent" disabled>
-                      </div>
-                    </div>
-                  <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Processing Fees:</label>
-                      <div class="col-sm-6">
-                        <input type="text" class="border-0 bg-transparent" disabled>
-                      </div>
-                    </div>
-                  <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Limit:</label>
-                      <div class="col-sm-6">
-                        <input type="text" class="border-0 bg-transparent" disabled>
-                      </div>
-                    </div>
+                  
 
                
                      
@@ -121,57 +98,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">
-                Guranteer Member Details </h5>
-
-              <!-- Horizontal Form -->
-              <form style="margin-top: -20px;">
-                <div class="row" style="margin-bottom: -20px;">
-                  <label for="#" class="col-sm-6 col-form-label">Employee Name:</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="border-0 bg-transparent" disabled>
-                  </div>
-                </div>
-                <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Employee Code:</label>
-                    <div class="col-sm-6">
-                      <input type="text" class="border-0 bg-transparent" disabled>
-                    </div>
-                  </div>
-                  <div class="row" style="margin-bottom: -20px;">
-                    <label for="#" class="col-sm-6 col-form-label">Employee Phone No.:</label>
-                    <div class="col-sm-6">
-                      <input type="text" class="border-0 bg-transparent" disabled>
-                    </div>
-                  </div>
-                  <div class="row" style="margin-bottom: -20px;">
-                      <label for="#" class="col-sm-6 col-form-label">Member Name:</label>
-                      <div class="col-sm-6">
-                        <input type="text" class="border-0 bg-transparent" disabled>
-                      </div>
-                    </div>
-               
-                    <div class="row" style="margin-bottom: -20px;">
-                        <label for="#" class="col-sm-6 col-form-label">Member Phone No:</label>
-                        <div class="col-sm-6">
-                          <input type="text" class="border-0 bg-transparent" disabled>
-                        </div>
-                      </div>
-                      
-                       
-                     
-                           
-               
-            
-                
-              </form><!-- End Horizontal Form -->
-
-            </div>
-          </div>
-        </div>
+        
 
         
 
@@ -179,9 +106,8 @@
 
           
           <div class="d-grid mt-4 gap-2 col d-md-flex justify-content-md-center">
-            <button type="#" class="btn btn-outline-danger">Deny</button>
-            <a class="btn btn-outline-success" href="#">Approve</a>
-            <a class="btn btn-outline-primary" href="#">Edit</a>
+            <a class="btn btn-outline-success" href="/approve_loan/{{ loan.member_id }}">Approve</a>
+            <a class="btn btn-outline-danger" href="/deny_loan/{{ loan.member_id }}">Deny</a>
         </div>
 
       </div>
