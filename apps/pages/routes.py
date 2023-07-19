@@ -92,6 +92,8 @@ def pi1():
         print(userid,"this is user id")
         currmember2.userid = userid
         db.session.commit()
+        return render_template('pages/PI1.html', form=personalInfo, memberID=userid)
+
     return render_template('pages/PI1.html', form=personalInfo)
 
 
