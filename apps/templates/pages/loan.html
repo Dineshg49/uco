@@ -54,7 +54,7 @@ LOAN MASTER ENTRY
                   <div class="col-md-4">
                     {% if hid %}
                       <label for="" class="form-label">Current Balance</label>
-                      <input type="tel" class="form-control" name="phone" id="principle" placeholder="{{ currmember.Thrift_FundBalance }}"
+                      <input type="tel" class="form-control" name="phone" id="principle" placeholder="{{ currmember.LoanAmount }}"
                           maxlength="10" disabled>
 
                           {% endif %}
@@ -112,8 +112,7 @@ LOAN MASTER ENTRY
   
   
            <div class="col-xl-8">
-              <input type="tel" class="form-control" name="phone" id="phone"
-                  placeholder="{{ currmember.Thrift_FundBalance}}" maxlength="10" disabled>
+             
         <div class="card">
           <div class="card-body pt-3">
             <!-- Bordered Tabs -->
@@ -190,8 +189,8 @@ LOAN MASTER ENTRY
                   <div class="row mb-3">
                     <label for="" class="col-md-4 col-lg-3 col-form-label">Tenure (months)</label>
                     <div class="col-md-8 col-lg-9">
-                      <!-- <input name="fullName" type="text" class="form-control" > -->
-                      {{ form.Tenure(class="form-control", disabled="True", placeholder="84") }}
+                      <input  type="text" class="form-control" disabled placeholder="{{ tenure }}" >
+                      <!-- {{ form.Tenure(class="form-control", disabled="True", placeholder="{{ tenure }}") }} -->
 
                     </div>
                   </div>
@@ -205,7 +204,9 @@ LOAN MASTER ENTRY
                   <div class="row mb-3">
                     <label for="" class="col-md-4 col-lg-3 col-form-label">Processing Fees</label>
                     <div class="col-md-8 col-lg-9">
-                      {{ form.ProcessingFees(class="form-control", disabled="True") }}
+                      <input  type="text" class="form-control" disabled placeholder="{{ processingFee }}" >
+
+                      <!-- {{ form.ProcessingFees(class="form-control", disabled="True") }} -->
                     </div>
                   </div>
                   <div class="d-grid gap-2 d-md-block text-center mt-3">

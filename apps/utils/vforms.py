@@ -158,7 +158,7 @@ class ThriftFund3(FlaskForm):
 
 
 class Search(FlaskForm):
-    text = StringField('text')
+    text = StringField('text', validators=[DataRequired()])
 
 
 class ShareForm(FlaskForm):
